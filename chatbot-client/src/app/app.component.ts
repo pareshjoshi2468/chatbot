@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   message= '';
 
   ngOnInit(){
-    this.socketService.receiveReply().subscribe(data=> {
+    this.socketService.receivedReply().subscribe(data=> {
       this.messageArray.push({name:'bot', message: data.outputMessage});
       this.speak(data.outputMessage);
     });

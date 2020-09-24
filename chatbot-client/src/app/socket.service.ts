@@ -12,7 +12,7 @@ export class SocketService {
     this.socket.emit('message', data);
   }
 
-  receiveReply() {
+  receivedReply() {
     const observable = new Observable<any>(observer => {
       this.socket.on('reply', (data) => {
         observer.next(data);
